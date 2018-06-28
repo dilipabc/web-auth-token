@@ -1,18 +1,18 @@
 'use strict';
 const fs = require('fs');
-let rawdata = fs.readFileSync('./authtokens.json');
-let authTokens = JSON.parse(rawdata);
+var rawdata = fs.readFileSync('./authtokens.json');
+var authTokens = JSON.parse(rawdata);
 
-
+//console.log(authTokens);
 
 var authToken = {
   //=======================================================
   userCreate: function(userData, callback) {
-	    let returnArray;
+	    var returnArray;
 	    if (userData.username != '' && userData.password != '') {
-	      let id = authTokens.length + 1;
+	      var id = authTokens.length + 1;
 
-	      let createDate = {
+	      var createDate = {
 	        "id": id,
 	        "username": userData.username,
 	        "password": userData.password,
@@ -23,7 +23,7 @@ var authToken = {
 	        }
 	      };
 
-	      let makeData = [];
+	      var makeData = [];
 
 	      if (authTokens.length == 0) {
 	        makeData = [createDate];
@@ -32,7 +32,7 @@ var authToken = {
 	        makeData[authTokens.length] = createDate;
 	      }
 
-	      let data = JSON.stringify(makeData);
+	      var data = JSON.stringify(makeData);
 	      fs.writeFileSync('authtokens.json', data);
 	      returnArray = {
 	        success: 1,
