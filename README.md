@@ -14,3 +14,9 @@ $ npm install --save web-auth-token
 ```js
 var authToken = require('web-auth-token');
 
+
+## License
+
+```
+Matrix Media Solutions Pvt. Ltd
+```

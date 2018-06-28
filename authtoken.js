@@ -5,11 +5,9 @@ var filetargetPath = __dirname + '/authtokens.json';
 var rawdata = fs.readFileSync(filetargetPath);
 var authTokens = JSON.parse(rawdata);
 
-//console.log(path.parse('dirname'));
-
 var authToken = {
   //=======================================================
-  userCreate: function(userData, callback) {
+  authTokenUserCreate : function(userData, callback) {
 	    var returnArray;
 	    if (userData.username != '' && userData.password != '') {
 	      var id = authTokens.length + 1;
@@ -50,19 +48,93 @@ var authToken = {
 	      };
 	      callback(returnArray);
 	    }
-  }
+  },
   //=======================================================
+  authTokenGenarate : function(authData, callback) {
+  	 var returnArray;
+  	 if (authData.username != '' && authData.password != '') {
+  	 	//====================================================
+  	 	if(authTokens.length == 0)
+  	 	{
+  	 		//====================================================
+  	 		returnArray = {
+  	 		  success: 2,
+  	 		  status: 'Invalid',
+  	 		  message: 'Auth user is not available.'
+  	 		};
+  	 		callback(returnArray);
+  	 		//====================================================  
+
+  	 	}else{
+  	 		//====================================================
+  	 		var count = 0;  
+  	 		var matchData = 0;
+  	 		for(var i=0; i<authTokens.length; i++)
+  	 		{  	 			
+  	 			//====================================================
+  	 			if(authTokens[i].username == authData.username && authTokens[i].password == authData.password)
+  	 			{
+  	 				matchData = matchData + 1;
+
+  	 				var oldData = authTokens[i];
+
+  	 				console.log(oldData); 
+
+  	 				var makeData = authTokens;
+  	 				var data = JSON.stringify(makeData);
+  	 				// fs.writeFileSync('authtokens.json', data);
+  	 				// returnArray = {
+  	 				//   success: 1,
+  	 				//   status: 'Valid',
+  	 				//   message: 'Successfully genarate authentication token key.'
+  	 				// };
+  	 				// callback(returnArray);
+
+  	 			}
+  	 			//====================================================
+  	 			count++;
+  	 			if(authTokens.length == count)
+  	 			{
+  	 				if(matchData == 0)
+  	 				{
+				  	 	//====================================================
+				  	 	returnArray = {
+				  	 	  success: 2,
+				  	 	  status: 'Invalid',
+				  	 	  message: 'Invalid username or password.'
+				  	 	};
+				  	 	callback(returnArray);
+				  	 	//====================================================
+  	 				}
+  	 			}
+  	 			//====================================================
+
+  	 		}  	 		
+  	 		//====================================================  
+  	 	}
+  	 	//====================================================
+  	 }else{
+  	 	//====================================================
+  	 	returnArray = {
+  	 	  success: 2,
+  	 	  status: 'Invalid',
+  	 	  message: 'Username and password is require.'
+  	 	};
+  	 	callback(returnArray);
+  	 	//====================================================  	 	
+  	 }
+  } 
   //=======================================================
 };
 
 
-// var testdata = {
-//   "username": "dilipabc@gmail.com",
-//   "password": "123456"
-// }
+var testdata = {
+  "username": "dilipabc1@gmail.com",
+  "password": "123456"
+}
 
-// authToken.userCreate(testdata, function(result) {
-//   console.log(result);
-// });
+authToken.authTokenGenarate(testdata, function(result) {
+  console.log(result);
+});
 
 module.exports = authToken;
