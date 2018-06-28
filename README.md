@@ -12,5 +12,5 @@ $ npm install --save web-auth-token
 ## Usage
 
 ```js
-var pathParse = require('web-auth-token');
+var authToken = require('web-auth-token');
 
