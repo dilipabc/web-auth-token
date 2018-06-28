@@ -1,9 +1,11 @@
 'use strict';
 const fs = require('fs');
-var rawdata = fs.readFileSync('./authtokens.json');
+const path = require('path');
+var filetargetPath = __dirname + '/authtokens.json';
+var rawdata = fs.readFileSync(filetargetPath);
 var authTokens = JSON.parse(rawdata);
 
-//console.log(authTokens);
+//console.log(path.parse('dirname'));
 
 var authToken = {
   //=======================================================

@@ -1,10 +1,10 @@
 {
   "name": "web-auth-token",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "web rest api token authentication",
   "main": "authtoken.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node authtoken.js"
   },
   "repository": {
     "type": "git",
