@@ -1,19 +1,26 @@
 {
   "name": "web-auth-token",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "web rest api token authentication",
-  "main": "app.js",
+  "main": "authtoken.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dilipabc/web-auth-token.git"
   },
   "keywords": [
     "web",
     "rest",
     "api",
-    "toekn",
+    "token",
     "auth"
   ],
   "author": "dilipabc <dilipabc@gmail.com>",
   "license": "ISC",
-  "dependencies": {}
+  "bugs": {
+    "url": "https://github.com/dilipabc/web-auth-token/issues"
+  },
+  "homepage": "https://github.com/dilipabc/web-auth-token#readme"
 }
