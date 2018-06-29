@@ -10,7 +10,9 @@ $ npm install --save web-auth-token
 ```
 
 
-## Usage Examples
+## Usage 
+
+Examples 1
 
 ```js
 var authToken = require('web-auth-token');
@@ -20,6 +22,22 @@ var data = {
    "password": "123456"
  }
 authToken.authTokenUserCreate(data, function(result) {
+   console.log(result);
+});
+
+```
+
+Examples 2
+
+```js
+var authToken = require('web-auth-token');
+
+var data = {
+   "username": "abcd",
+   "password": "123456",
+   "expiredTime" : 0 // expired in secound "0" is unlimied
+ }
+authToken.authTokenGenarate(data, function(result) {
    console.log(result);
 });
 
