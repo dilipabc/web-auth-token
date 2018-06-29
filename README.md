@@ -12,7 +12,7 @@ $ npm install --save web-auth-token
 
 ## Usage 
 
-Examples 1
+Step 1
 
 ```js
 var authToken = require('web-auth-token');
@@ -27,7 +27,7 @@ authToken.authTokenUserCreate(data, function(result) {
 
 ```
 
-Examples 2
+Step 2
 
 ```js
 var authToken = require('web-auth-token');
@@ -43,7 +43,7 @@ authToken.authTokenGenarate(data, function(result) {
 
 ```
 
-Examples 3
+Step 3
 
 ```js
 var authToken = require('web-auth-token');
