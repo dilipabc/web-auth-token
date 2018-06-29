@@ -35,9 +35,22 @@ var authToken = require('web-auth-token');
 var data = {
    "username": "abcd",
    "password": "123456",
-   "expiredTime" : 0 // expired in secound "0" is unlimied
+   "expiredTime" : 0 // Expired in second "0" is unlimited
  }
 authToken.authTokenGenarate(data, function(result) {
+   console.log(result);
+});
+
+```
+
+Examples 3
+
+```js
+var authToken = require('web-auth-token');
+
+var secretKey = '40e500de41432de6ae60bfc0b75dccccba3a24af5c33509ae294491447840b23';
+
+authToken.authTokenVerify(secretKey, function(result){
    console.log(result);
 });
 
@@ -52,3 +65,5 @@ This is a Node API package to secure any API created through Node Js. Following 
   * Attach the secret key with any API.
   * Verify the API with this secret key.
 
+## license
+ISC
