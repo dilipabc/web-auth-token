@@ -1,6 +1,6 @@
 {
   "name": "web-auth-token",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Web rest api authentication token",
   "main": "authtoken.js",
   "scripts": {
