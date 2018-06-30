@@ -6,7 +6,6 @@ var filetargetPath = __dirname + '/authtokens.json';
 var rawdata = fs.readFileSync(filetargetPath);
 var authTokens = JSON.parse(rawdata);
 
-
 var authToken = {
   //=======================================================
   authTokenUserCreate: function(userData, callback) {
@@ -45,7 +44,7 @@ var authToken = {
           makeData[authTokens.length] = createDate;
         }
         var data = JSON.stringify(makeData);
-        fs.writeFileSync('authtokens.json', data);
+        fs.writeFileSync(filetargetPath, data);
         returnArray = {
           success: 1,
           status: 'Valid',
@@ -134,7 +133,7 @@ var authToken = {
             var makeData = authTokens;
             makeData[i] = oldData;
             var data = JSON.stringify(makeData);
-            fs.writeFileSync('authtokens.json', data);
+            fs.writeFileSync(filetargetPath, data);
             returnArray = {
               success: 1,
               status: 'Valid',

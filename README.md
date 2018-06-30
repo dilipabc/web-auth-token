@@ -10,7 +10,7 @@ $ npm install --save web-auth-token
 ```
 
 
-## Usage 
+## Usage
 
 Step 1
 
@@ -66,4 +66,4 @@ This is a Node API package to secure any API created through Node Js. Following 
   * Verify the API with this secret key.
 
 ## license
-ISC
+Matrix Media Solutions Pvt. Ltd.
