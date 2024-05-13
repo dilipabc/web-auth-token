@@ -1,6 +1,6 @@
 {
   "name": "web-auth-token",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Web rest api authentication token",
   "main": "authtoken.js",
   "scripts": {
@@ -18,9 +18,12 @@
     "auth"
   ],
   "author": "dilipabc <dilipabc@gmail.com>",
-  "license": "Matrix Media Solutions Pvt. Ltd.",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/dilipabc/web-auth-token/issues"
   },
-  "homepage": "https://github.com/dilipabc/web-auth-token#readme"
+  "homepage": "https://github.com/dilipabc/web-auth-token#readme", 
+  "engines": {
+    "node": ">=4"
+  }
 }
